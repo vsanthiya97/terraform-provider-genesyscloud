@@ -59,7 +59,7 @@ func createJourneyViewSchedule(ctx context.Context, d *schema.ResourceData, meta
 		return util.BuildAPIDiagnosticError(ResourceType, fmt.Sprintf("Failed to create schedule for journey view id %s: %s", JourneyViewId, err), resp)
 	}
 
-	// The create API returns 201 with an empty response body. So the schedule id is nil GRID-3290
+	// The create API returns 201 with an empty response body. So the schedule id is nil
 	// The journey view and its schedule is a 1-1 map
 	// The schedule entity id is identical to the journey view id, using this to set resource Id
 	if journeyViewSchedule.Id == nil {
